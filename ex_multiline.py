@@ -11,7 +11,7 @@ IDEANUMBER = 1
 IDEAS = ''
 TIME_START = datetime.datetime.now()
 TIME_LASTIDEA = datetime.datetime.now()
-EXPERIMENT_TIME = 60
+EXPERIMENT_TIME = 0.5
 EXPRAIN = '使用方法：空欄に記入して、エンターキーを押すと入力されます。'
 THEME = 'テーマ：'
 THEMELIST = ['男性用ズボンを改善するアイデア','新しい消しごむのアイデア','新しいペンのアイデア','新しい冷蔵庫の機能とデザインのアイデア','新しい洗濯機の機能とデザインのアイデア']
@@ -41,12 +41,13 @@ layout = [
     [sg.Text('はじめに実行ボタンを押すかエンターキーを押してください。押した時点からスタートします。',key='-STTEXT-')],
     [sg.Text('アイデアを入力',size=(15,1)),sg.InputText(size=(100,1),key='-IDEA-')],
     [sg.Submit(button_text='実行ボタン')],
-    [sg.Multiline(size=(70,1), font=(30), autoscroll=True, key='-IDEAS-')]
+    [sg.Multiline(size=(70,1),font=('明朝体',20), autoscroll=True, key='-IDEAS-')]
 ]
 
 # セクション 2 - ウィンドウの生成
 # FinalizeとMaximizeで最大化する
-window = sg.Window('アイデア出し', layout,resizable=True,return_keyboard_events=True).Finalize()
+window = sg.Window('アイデア出し', layout,resizable=True,return_keyboard_events=True,\
+        keep_on_top=True).Finalize()
 window.Maximize()
 window['-IDEAS-'].expand(True,True)
 
