@@ -4,7 +4,7 @@ import os
 
 # files = glob.glob('C:\研究室\みんなのアイデア\予備実験結果\*')
 
-path = 'C:\研究室\みんなのアイデア\西脇冷蔵庫1203.txt'
+path = 'C:\研究室\みんなのアイデア\内藤洗濯機1203.txt'
 words = []
 
 with open(path, encoding='utf_8') as file:
